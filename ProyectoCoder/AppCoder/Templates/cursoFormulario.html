@@ -7,9 +7,19 @@
     <title>Formulario - Agregar curso</title>
 </head>
 <body>
+    
+    {% if miFormulario.errors %}
+    
+    <p style="color: red;">Están mal los datos, revisar</p>
+        
+    {% endif %}
+        
     <form action="/AppCoder/cursoFormulario" method="POST">{% csrf_token %}
-        <p>Curso: <input type="text" name="curso"></p>
-        <p>Camada: <input type="number" name="camada"></p>
+        <!-- <p>Curso: <input type="text" name="curso"></p>
+        <p>Camada: <input type="number" name="camada"></p> -->
+        <table>
+            {{miFormulario.as_table}}
+        </table>
         <input type="submit" value="Enviar">
     </form>
 </body>

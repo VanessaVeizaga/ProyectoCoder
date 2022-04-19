@@ -4,7 +4,19 @@
 
 {% block contenidoQueCambia %}
 
-<h3>Vista de Curso</h3>
-<p>Se generó el curso de {{nombre}} con el número {{camada}} de camada.</p>
+{% if miFormulario.errors %}
+    
+    <p style="color: red;">Están mal los datos, revisar</p>
+        
+    {% endif %}
+        
+    <form action="" method="POST">{% csrf_token %}
+        <!-- <p>Curso: <input type="text" name="curso"></p>
+        <p>Camada: <input type="number" name="camada"></p> -->
+        <table>
+            {{miFormulario.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
 
 {% endblock %}

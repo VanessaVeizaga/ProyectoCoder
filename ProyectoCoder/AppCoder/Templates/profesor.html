@@ -4,6 +4,21 @@
 
 {% block contenidoQueCambia %}
 
-<h1>Vista de Profesor</h1>
+{% if miFormulario.errors %}
+    
+    <p style="color: red;">Están mal los datos, revisar</p>
+        
+    {% endif %}
+
+    <h4>Agregar profesor:</h4>
+        
+    <form action="" method="POST">{% csrf_token %}
+        <!-- <p>Curso: <input type="text" name="curso"></p>
+        <p>Camada: <input type="number" name="camada"></p> -->
+        <table>
+            {{miFormulario.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
 
 {% endblock %}

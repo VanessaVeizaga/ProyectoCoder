@@ -5,6 +5,8 @@ admin.site.register(Curso)
 admin.site.register(Estudiantes)
 admin.site.register(Profesor)
 admin.site.register(Entregables)
+admin.site.register(Avatar)
+
 
 
 
